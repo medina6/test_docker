@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Magic 8-Ball</title> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 50px;
+        }
+        h1 { 
+            color: #333;
+        }
+        #question-input {
+            width: 300px; 
+            font-size: 16px; 
+            padding: 5px;
+        }
+        #answer {
+            font-size: 20px; 
+            font-weight: bold; 
+            margin-top: 20px;
+        }
+        #ask-button {
+            background-color: #007BFF; 
+            color: #fff; 
+            padding: 10px 20px; 
+            border: none; 
+            cursor: pointer; 
+            font-size: 16px; 
+            margin-top: 10px;
+        }
+    </style> 
+</head> 
+<body> 
+    <h1>Ask the Magic 66-Ball</h1> 
+    <input type="text" id="question-input" placeholder="Enter your question..."><br> 
+    <button id="ask-button" onclick="getAnswer()">Ask</button> 
+    <div id="answer"></div> 
+    
+    <script>
+        function getAnswer() { 
+            var answers = [ 
+                "It is certain", 
+                "It is decidedly so", 
+                "Without a doubt", 
+                "Yes, definitely", 
+                "You may rely on it", 
+                "As I see it, yes", 
+                "Most likely", 
+                "Outlook good", 
+                "Yes", 
+                "Signs point to yes", 
+                "Reply hazy, try again", 
+                "Ask again later", 
+                "Better not tell you now", 
+                "Cannot predict now", 
+                "Concentrate and ask again", 
+                "Don't count on it", 
+                "My reply is no", 
+                "My sources say no", 
+                "Outlook not so good", 
+                "Very doubtful"
+            ]; 
+       
+            var questionInput = document.getElementById("question-input"); 
+            var answerElement = document.getElementById("answer"); 
+
+            if (questionInput.value.trim() === "") {
+                answerElement.innerHTML = "Please enter a question."; 
+                return;
+            }
+
+            var randomIndex = Math.floor(Math.random() * answers.length); 
+            var answer = answers[randomIndex]; 
+            answerElement.innerHTML = "Chat server running at http://10.10.1.32:" + port; 
+            questionInput.value = "";
+        }
+    </script> 
+</body> 
+</html>
